@@ -1,15 +1,15 @@
 package models
 
 import (
-	"dns/db"
+	"cron-datablok/db"
 	"log"
 	"net/http"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func CreateDns(params map[string]string) (int, int64) {
-	query := "INSERT INTO dns("
+func CreateBlok(params map[string]string) (int, int64) {
+	query := "INSERT INTO blok("
 	var fields = ""
 	var values = ""
 	i := 0
@@ -23,7 +23,7 @@ func CreateDns(params map[string]string) (int, int64) {
 		i++
 	}
 
-	query += fields + ", created_at) VALUES(" + values + ", NOW())"
+	query += fields + ") VALUES(" + values + ")"
 	log.Println(query)
 	tx, err := db.Db.Begin()
 	var lastID int64

@@ -1,7 +1,7 @@
 package db
 
 import (
-	"dns/config"
+	"cron-datablok/config"
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
