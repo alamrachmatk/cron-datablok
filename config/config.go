@@ -13,6 +13,6 @@ const (
 	RedisHost string = "localhost"
 	RedisPort string = "6379"
 
-	DataBlokPath string = "/var/www/html/datablok/drugs.txt"
+	DataBlokPath string = "/var/www/html/datablok/crypto.txt"
 	BlokCategory string = "3"
 )
