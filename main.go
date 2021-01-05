@@ -17,7 +17,7 @@ func main() {
 	// Initialize main database
 	db.Db = db.MariaDBInit()
 
-	gocron.Every(1).Day().At("23:28").Do(DataBlok)
+	gocron.Every(1).Day().At("23:47").Do(DataBlok)
 
 	<-gocron.Start()
 }
