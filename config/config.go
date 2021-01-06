@@ -13,6 +13,6 @@ const (
 	RedisHost string = "localhost"
 	RedisPort string = "6379"
 
-	DataBlokPath string = "/var/www/html/datablok/tiktok.txt"
-	BlokCategory string = "15"
+	DataBlokPath string = "/var/www/html/datablok/torrent.txt"
+	BlokCategory string = "16"
 )
