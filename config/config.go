@@ -14,5 +14,5 @@ const (
 	RedisPort string = "6379"
 
 	DataBlokPath string = "/var/www/html/datablok/redirect.txt"
-	BlokCategory string = "13"
+	BlokCategory string = "14"
 )
