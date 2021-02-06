@@ -43,7 +43,7 @@ func DataBlock() {
 
 	params := make(map[string]string)
 	for _, eachline := range txtlines {
-		params["name"] = eachline
+		params["domain"] = eachline
 		params["category_block_id"] = config.BlockCategory
 		statusResponse, err := models.CreateBlock(params)
 		if statusResponse != 200 {
