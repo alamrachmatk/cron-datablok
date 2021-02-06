@@ -1,15 +1,15 @@
 package models
 
 import (
-	"cron-datablok/db"
+	"cron-datablock/db"
 	"log"
 	"net/http"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
-func CreateBlok(params map[string]string) (int, int64) {
-	query := "INSERT INTO blok("
+func CreateBlock(params map[string]string) (int, int64) {
+	query := "INSERT INTO block("
 	var fields = ""
 	var values = ""
 	i := 0

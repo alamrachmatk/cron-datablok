@@ -2,9 +2,9 @@ package main
 
 import (
 	"bufio"
-	"cron-datablok/config"
-	"cron-datablok/db"
-	"cron-datablok/models"
+	"cron-datablock/config"
+	"cron-datablock/db"
+	"cron-datablock/models"
 	"log"
 	"os"
 
@@ -17,14 +17,14 @@ func main() {
 	// Initialize main database
 	db.Db = db.MariaDBInit()
 
-	gocron.Every(1).Day().At("20:45").Do(DataBlok)
+	gocron.Every(1).Day().At("20:45").Do(DataBlock)
 
 	<-gocron.Start()
 }
 
-func DataBlok() {
-	log.Println("RUNNING CRON DATA BLOK")
-	fileName := config.DataBlokPath
+func DataBlock() {
+	log.Println("RUNNING CRON DATA BLOCK")
+	fileName := config.DataBlockPath
 	log.Println("open file: ", fileName)
 	file, err := os.Open(fileName) // For read access.
 	if err != nil {
@@ -44,9 +44,8 @@ func DataBlok() {
 	params := make(map[string]string)
 	for _, eachline := range txtlines {
 		params["name"] = eachline
-		params["category_blok_id"] = config.BlokCategory
-		log.Println("PARAMS: ", params)
-		statusResponse, err := models.CreateBlok(params)
+		params["category_block_id"] = config.BlockCategory
+		statusResponse, err := models.CreateBlock(params)
 		if statusResponse != 200 {
 			log.Println(err)
 		}
